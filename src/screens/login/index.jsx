@@ -13,7 +13,7 @@ import { EyeIcon } from "@heroicons/react/24/outline";
 const Login = () => {
   const [password, setPassword] = useState("");
   const [email, setEmail] = useState("");
-  const [viewPass, setViewPass] = useState(true);
+  const [viewPass, setViewPass] = useState(false);
   const [signInWithEmailAndPassword, user, loading, error] =
     useSignInWithEmailAndPassword(auth);
   const navigate = useNavigate();
