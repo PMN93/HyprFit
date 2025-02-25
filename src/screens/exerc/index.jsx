@@ -107,7 +107,7 @@ const Exerc = () => {
                     </Dialog.Trigger>
                     <Dialog.Portal>
                       <Dialog.Overlay className="fixed inset-0 bg-black/90 animate-overlayShow" />
-                      <Dialog.Content className="fixed top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 bg-white rounded-lg shadow-lg w-[90vw] max-w-md max-h-[85vh] p-6 animate-contentShow focus:outline-none">
+                      <Dialog.Content className="fixed top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 bg-white rounded-lg shadow-lg w-auto max-w-md max-h-[85vh] p-6 animate-contentShow focus:outline-none">
                         <Dialog.Title className="m-0 text-mauve-900 text-lg font-medium">
                           {item.exc}
                         </Dialog.Title>
