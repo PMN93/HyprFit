@@ -116,7 +116,7 @@ const Login = () => {
       </div> */}
 
       <div className="flex flex-row w-full text-gray-500 items-end justify-center h-full ml-10">
-        Desenvolvido por Pedro Môra Neto.
+        Desenvolvido por Pedro Môra Neto
       </div>
     </div>
   );
