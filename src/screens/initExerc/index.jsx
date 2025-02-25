@@ -19,7 +19,7 @@ useEffect(() => {
   } else if (email === "nataliacelso@yahoo.com.br") {
     setGroups([
       { id: "a", name: "Pernas e Glúteos" },
-      { id: "b", name: "Glúteos e Posterior de Coxa" },
+      { id: "b", name: "Costas e Ombros" },
       { id: "c", name: "Pernas e Glúteos" },
       { id: "d", name: "Braços e Peito" },
       { id: "e", name: "Glúteos e Posterior de Coxa - 2" },
