@@ -19,7 +19,10 @@ useEffect(() => {
   } else if (email === "nataliacelso@yahoo.com.br") {
     setGroups([
       { id: "a", name: "Pernas e Glúteos" },
-      { id: "b", name: "Braço" },
+      { id: "b", name: "Glúteos e Posterior de Coxa" },
+      { id: "c", name: "Pernas e Glúteos" },
+      { id: "d", name: "Braços e Peito" },
+      { id: "e", name: "Glúteos e Posterior de Coxa - 2" },
     ]);
   } else {
     setGroups([]); // Garante que groups sempre tenha um valor
