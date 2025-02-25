@@ -45,7 +45,7 @@ const Login = () => {
   // }, [theme]);
 
   return (
-    <div className="flex flex-col w-screen h-screen justify-start items-center pt-48 pr-5">
+    <div className="flex flex-col w-screen h-screen justify-start items-center pt-40 pr-5">
       <img className="w-52 h-44" src={logo}></img>
       <div className="flex flex-col items-center mt-12">
         <h1 className="text-3xl font-bold">Entre com sua conta</h1>
@@ -115,7 +115,7 @@ const Login = () => {
         </Link>
       </div> */}
 
-      <div className="flex flex-row w-full text-gray-500 items-end justify-center h-full ml-10">
+      <div className="flex flex-row w-full text-gray-500 items-end justify-center h-full ml-8">
         Desenvolvido por Pedro Môra Neto
       </div>
     </div>
