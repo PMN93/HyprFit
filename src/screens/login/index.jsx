@@ -1,5 +1,5 @@
 import React, { createContext, useState } from "react";
-import mascote from "../../assets/cenoura.png";
+import logo from "../../assets/fundo.png";
 import { Link, useNavigate } from "react-router-dom";
 import {
   useSignInWithEmailAndPassword,
@@ -32,14 +32,14 @@ const Login = () => {
   };
 
   return (
-    <div className="flex flex-col w-screen h-screen justify-center items-center">
-      {/* <img className="w-48 h-48" src={mascote}></img> */}
-      <div className="flex flex-col mt-2 items-center">
+    <div className="flex flex-col w-screen h-screen justify-start items-center pt-48">
+      <img className="w-60 h-44" src={logo}></img>
+      <div className="flex flex-col items-center mt-12">
         <h1 className="text-3xl font-bold">Entre com sua conta</h1>
       </div>
       <div className="flex flex-col w-96 mt-8">
         <input
-          className="border border-gray-300 p-2 mb-1 rounded-md focus:outline-orange-500"
+          className="border border-gray-300 p-2 mb-1 rounded-md focus:outline-black"
           type="text"
           placeholder="E-mail"
           onChange={(e) => {
@@ -47,7 +47,7 @@ const Login = () => {
           }}
         ></input>
         <input
-          className="border border-gray-300 p-2 rounded-md focus:outline-orange-500"
+          className="border border-gray-300 p-2 rounded-md focus:outline-black"
           type="password"
           placeholder="Senha"
           onChange={(e) => {
@@ -57,7 +57,7 @@ const Login = () => {
       </div>
       <div className="flex flex-col w-96 mt-8">
         <button
-          className="bg-orange-500 text-white p-2 rounded-md"
+          className="bg-black text-white p-2 rounded-md hover:bg-gray-700"
           onClick={() => {
             handleLogin();
           }}
@@ -65,24 +65,24 @@ const Login = () => {
           Entrar
         </button>
       </div>
-      <div className="flex flex-row mt-6 gap-2">
+      {/* <div className="flex flex-row mt-6 gap-2">
         <p>Esqueceu sua senha?</p>
         <a
           onClick={() => {
             sendPasswordResetEmail(auth, "pedro.mora.neto1993@gmail.com");
           }}
-          className="text-orange-500 underline cursor-pointer"
+          className="text-black underline cursor-pointer"
         >
           Redefinir
         </a>
-      </div>
-      <div className="flex flex-row mt-8 gap-2">
-        {/* <Link to={"/signup"}> */}
-        <button className="rounded-md p-2 text-orange-500 bg-transparent border-solid border-2 border-orange-500 font-bold ">
+      </div> */}
+      {/* <div className="flex flex-row mt-8 gap-2">
+        <Link to={"/signup"}>
+        <button className="rounded-md p-2 text-black bg-transparent border-solid border-2 border-black font-bold ">
           CRIAR UMA CONTA
         </button>
-        {/* </Link> */}
-      </div>
+        </Link>
+      </div> */}
     </div>
   );
 };
