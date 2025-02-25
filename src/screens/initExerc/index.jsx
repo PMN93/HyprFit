@@ -1,99 +1,63 @@
+import { useEffect, useState } from "react";
 import { Link } from "react-router-dom";
 
 const InitExerc = () => {
+
+  const [groups, setGroups] = useState([]);
+
+useEffect(() => {
+  const email = localStorage.getItem("Email");
+
+  if (email === "pedro.mora.neto1993@gmail.com") {
+    setGroups([
+      { id: "a", name: "Peito" },
+      { id: "b", name: "Braço" },
+      { id: "c", name: "Perna" },
+      { id: "d", name: "Costa" },
+      { id: "e", name: "Ombro" },
+    ]);
+  } else if (email === "nataliacelso@yahoo.com.br") {
+    setGroups([
+      { id: "a", name: "Pernas e Glúteos" },
+      { id: "b", name: "Braço" },
+    ]);
+  } else {
+    setGroups([]); // Garante que groups sempre tenha um valor
+  }
+}, []);
+  
+  
   return (
-    <div className="flex flex-col w-full justify-center items-center overflow-auto">
-      <div className="flex flex-col bg-black w-full justify-center items-center pt-8">
-        <p className="flex text-white font-bold text-5xl mb-10">Treinos</p>
+    <div className="flex flex-col w-full min-h-screen justify-center items-center bg-gray-100 transition-colors duration-300">
+      {/* Header */}
+      <div className="flex flex-col w-full items-center justify-center bg-black py-8 shadow-lg">
+        <p className="text-white font-bold text-5xl mb-4">Treinos</p>
       </div>
 
-      <div className="flex flex-col w-full h-screen">
-        <div className="flex flex-wrap w-full p-10 gap-20 items-center justify-center">
-          <Link to={"/exerc"}>
+      {/* Cards de treino */}
+      <div className="flex flex-wrap w-full p-10 gap-8 items-center justify-center">
+        {groups.map((group) => (
+          <Link to={"/exerc"} key={group.id}>
             <div
-              className="bg-white w-64 h-64 rounded-2xl flex flex-col border-2 border-black"
+              className="bg-white w-64 h-64 rounded-3xl flex flex-col border border-gray-300 shadow-xl hover:scale-105 hover:shadow-2xl transition-transform duration-300 cursor-pointer"
               onClick={() => {
-                localStorage.setItem("grupo", "peito");
-                localStorage.setItem("id", "a");
+                localStorage.setItem("grupo", group.name.toLowerCase());
+                localStorage.setItem("id", group.id);
               }}
             >
               <div className="flex flex-col w-full p-4">
-                <p className="text-2xl font-bold">A</p>
+                <p className="text-2xl font-bold text-gray-700">
+                  {group.id.toUpperCase()}
+                </p>
               </div>
-              <div className="flex flex-col w-full h-full p-4 items-center pt-12">
-                <p className="text-3xl font-bold">Peito</p>
-              </div>
-            </div>
-          </Link>
-
-          <Link to={"/exerc"}>
-            <div
-              className="bg-white w-64 h-64 rounded-2xl flex flex-col border-2 border-black"
-              onClick={() => {
-                localStorage.setItem("grupo", "braço");
-                localStorage.setItem("id", "b");
-              }}
-            >
-              <div className="flex flex-col w-full p-4">
-                <p className="text-2xl font-bold">B</p>
-              </div>
-              <div className="flex flex-col w-full h-full p-4 items-center pt-12">
-                <p className="text-3xl font-bold">Braço</p>
+              <div className="flex flex-col w-full h-full p-4 items-center justify-center">
+                <p className="text-3xl font-bold text-gray-900">
+                  {group.name}
+                </p>
               </div>
             </div>
           </Link>
-
-          <Link to={"/exerc"}>
-            <div
-              className="bg-white w-64 h-64 rounded-2xl flex flex-col border-2 border-black"
-              onClick={() => {
-                localStorage.setItem("grupo", "perna");
-                localStorage.setItem("id", "c");
-              }}
-            >
-              <div className="flex flex-col w-full p-4">
-                <p className="text-2xl font-bold">C</p>
-              </div>
-              <div className="flex flex-col w-full h-full p-4 items-center pt-12">
-                <p className="text-3xl font-bold">Perna</p>
-              </div>
-            </div>
-          </Link>
-
-          <Link to={"/exerc"}>
-            <div
-              className="bg-white w-64 h-64 rounded-2xl flex flex-col border-2 border-black"
-              onClick={() => {
-                localStorage.setItem("grupo", "costa");
-                localStorage.setItem("id", "d");
-              }}
-            >
-              <div className="flex flex-col w-full p-4">
-                <p className="text-2xl font-bold">D</p>
-              </div>
-              <div className="flex flex-col w-full h-full p-4 items-center pt-12">
-                <p className="text-3xl font-bold">Costa</p>
-              </div>
-            </div>
-          </Link>
-
-          <Link to={"/exerc"}>
-            <div
-              className="bg-white w-64 h-64 rounded-2xl flex flex-col border-2 border-black"
-              onClick={() => {
-                localStorage.setItem("grupo", "ombro");
-                localStorage.setItem("id", "e");
-              }}
-            >
-              <div className="flex flex-col w-full p-4">
-                <p className="text-2xl font-bold">E</p>
-              </div>
-              <div className="flex flex-col w-full h-full p-4 items-center pt-12">
-                <p className="text-3xl font-bold">Ombro</p>
-              </div>
-            </div>
-          </Link>
-        </div>
+        ))}
       </div>
     </div>
   );

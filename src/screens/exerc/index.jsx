@@ -7,11 +7,12 @@ import {
   setDoc,
   getDoc,
 } from "firebase/firestore";
+import { Link } from "react-router-dom";
 
 const Exerc = () => {
   const db = getFirestore();
   const userCollectionRef = collection(db, "Clientes");
-  const userId = "pedro.mora.neto1993@gmail.com";
+  const userId = localStorage.getItem("Email");
   const grupo = localStorage.getItem("grupo");
   const id = localStorage.getItem("id");
 
@@ -149,12 +150,14 @@ const Exerc = () => {
           ))}
 
         <div className="flex w-full p-5 mt-5 items-center justify-center">
+          <Link to={"/initexerc"}>
           <button
             className="bg-black text-white font-bold text-2xl rounded-lg p-3"
             onClick={() => getUserData(userId)}
           >
             Finalizar Treino
-          </button>
+            </button>
+            </Link>
         </div>
       </div>
     </div>

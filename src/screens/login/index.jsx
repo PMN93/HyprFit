@@ -1,4 +1,4 @@
-import React, { createContext, useState } from "react";
+import React, { createContext, useEffect, useState } from "react";
 import logo from "../../assets/fundo.png";
 import { Link, useNavigate } from "react-router-dom";
 import {
@@ -14,6 +14,7 @@ const Login = () => {
   const [signInWithEmailAndPassword, user, loading, error] =
     useSignInWithEmailAndPassword(auth);
   const navigate = useNavigate();
+  // const [theme, setTheme] = useState(localStorage.getItem("theme") || "light");
 
   const handleLogin = async () => {
     try {
@@ -30,6 +31,15 @@ const Login = () => {
       console.error("Erro ao fazer login:", error.message);
     }
   };
+
+  // useEffect(() => {
+  //   if (theme === "dark") {
+  //     document.documentElement.classList.add("dark");
+  //   } else {
+  //     document.documentElement.classList.remove("dark");
+  //   }
+  //   localStorage.setItem("theme", theme);
+  // }, [theme]);
 
   return (
     <div className="flex flex-col w-screen h-screen justify-start items-center pt-48">
