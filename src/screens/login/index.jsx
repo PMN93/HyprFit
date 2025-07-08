@@ -48,7 +48,7 @@ const Login = () => {
     <div className="flex flex-col w-screen h-screen justify-start items-center pt-40 pr-5">
       <img className="w-52 h-44" src={logo}></img>
       <div className="flex flex-col items-center mt-12">
-        <h1 className="text-3xl font-bold">Entre com sua conta</h1>
+        <h1 className="text-3xl font-bold">Entre com sua conta!</h1>
       </div>
       <div className="flex flex-col w-auto mt-8 items-center justify-center">
         <input
